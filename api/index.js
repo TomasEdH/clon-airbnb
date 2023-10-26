@@ -19,10 +19,11 @@ require('dotenv').config();
 const bcryptSalt = bcrypt.genSaltSync(10);
 const jwtSecret = 'poiakdoljakdfh7w2213d';
 
+app.use(cookieParser());
 app.use(express.json());
 // app.use(cookieParser());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Asegura la correcta ubicación de las imágenes
-app.listen(1234);
+app.listen(1233);
 
 app.use(
   cors({
@@ -34,9 +35,12 @@ app.use(
 // Conexión a la base de datos
 mongoose.connect(process.env.MONGO_URL);
 
+
 app.get('/test', (req, res) => {
   res.json('test ok ok');
 });
+
+
 
 app.post('/register', async (req, res) => {
   // Registramos el usuario con los datos requeridos
@@ -172,8 +176,6 @@ app.post('/places', (req, res) => {
 
 
 })
-
-
 
 
 app.get('/places/:id', async (req, res) => {
