@@ -10,7 +10,7 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path'); // Importa el módulo path
 const multer = require('multer')
-const Place = require('./models/place.js');
+const Place = require('./models/place.js'); 
 const Booking = require('./models/booking');
 
 //dotenv nos permite cargar las variables de entorno .env en nuestra aplicación
